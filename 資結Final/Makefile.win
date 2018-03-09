@@ -1,0 +1,55 @@
+# Project: 專案2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o PriceTableADT.o PriceTableIMP.o UBike.o UBikeHashTableADT.o UBikeHashTableIMP.o UBikeHeapADT.o UBikeHeapIMP.o UBikeSystemADT.o UBikeSystemIMP.o
+LINKOBJ  = main.o PriceTableADT.o PriceTableIMP.o UBike.o UBikeHashTableADT.o UBikeHashTableIMP.o UBikeHeapADT.o UBikeHeapIMP.o UBikeSystemADT.o UBikeSystemIMP.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -std=c++11 -lws2_32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 專案2.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11 -g3 -std=c++11
+CFLAGS   = $(INCS) -std=gnu++11 -g3 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+PriceTableADT.o: PriceTableADT.cpp
+	$(CPP) -c PriceTableADT.cpp -o PriceTableADT.o $(CXXFLAGS)
+
+PriceTableIMP.o: PriceTableIMP.cpp
+	$(CPP) -c PriceTableIMP.cpp -o PriceTableIMP.o $(CXXFLAGS)
+
+UBike.o: UBike.cpp
+	$(CPP) -c UBike.cpp -o UBike.o $(CXXFLAGS)
+
+UBikeHashTableADT.o: UBikeHashTableADT.cpp
+	$(CPP) -c UBikeHashTableADT.cpp -o UBikeHashTableADT.o $(CXXFLAGS)
+
+UBikeHashTableIMP.o: UBikeHashTableIMP.cpp
+	$(CPP) -c UBikeHashTableIMP.cpp -o UBikeHashTableIMP.o $(CXXFLAGS)
+
+UBikeHeapADT.o: UBikeHeapADT.cpp
+	$(CPP) -c UBikeHeapADT.cpp -o UBikeHeapADT.o $(CXXFLAGS)
+
+UBikeHeapIMP.o: UBikeHeapIMP.cpp
+	$(CPP) -c UBikeHeapIMP.cpp -o UBikeHeapIMP.o $(CXXFLAGS)
+
+UBikeSystemADT.o: UBikeSystemADT.cpp
+	$(CPP) -c UBikeSystemADT.cpp -o UBikeSystemADT.o $(CXXFLAGS)
+
+UBikeSystemIMP.o: UBikeSystemIMP.cpp
+	$(CPP) -c UBikeSystemIMP.cpp -o UBikeSystemIMP.o $(CXXFLAGS)
